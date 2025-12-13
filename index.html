@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Gift of the Magi: 2025 Remix</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+
+            .phone-screen {
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                transition: all 0.5s ease;
+            }
+
+            .fade-in {
+                animation: fadeIn 0.5s ease-in;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .chat-bubble {
+                position: relative;
+                max-width: 80%;
+                padding: 10px 15px;
+                border-radius: 20px;
+                margin-bottom: 10px;
+                font-size: 0.9rem;
+            }
+
+            .chat-sent {
+                background-color: #3B82F6;
+                color: white;
+                align-self: flex-end;
+                border-bottom-right-radius: 5px;
+            }
+
+            .chat-received {
+                background-color: #E5E7EB;
+                color: black;
+                align-self: flex-start;
+                border-bottom-left-radius: 5px;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-100 min-h-screen flex flex-col items-center py-6">
+
+        <header class="text-center mb-8 max-w-2xl px-4">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-2">The Gift of the Magi</h1>
+            <h2 class="text-xl text-indigo-600 font-semibold mb-4">A 2025 Digital Remix</h2>
+            <p class="text-gray-500 text-sm">
+                New York City. Inflation is up. <br>
+                Della and Jim Young have $1.87 in their digital wallet. <br>
+                Christmas is tomorrow. How far will they go for love?
+            </p>
+        </header>
+
+        <div class="flex space-x-4 mb-8 bg-white p-2 rounded-full shadow-md">
+            <button onclick="setPerspective('della')" id="btn-della"
+                class="px-6 py-2 rounded-full font-bold transition-colors bg-pink-500 text-white shadow-lg"><i
+                    class="fa-solid fa-mobile-screen mr-2"></i>Della's Phone</button>
+            <button onclick="setPerspective('jim')" id="btn-jim"
+                class="px-6 py-2 rounded-full font-bold transition-colors text-gray-500 hover:bg-gray-100"><i
+                    class="fa-solid fa-mobile-screen mr-2"></i>Jim's Phone</button>
+            <button onclick="setPerspective('chat')" id="btn-chat"
+                class="px-6 py-2 rounded-full font-bold transition-colors text-gray-500 hover:bg-gray-100"><i
+                    class="fa-regular fa-comments mr-2"></i>The Reveal</button>
+        </div>
+
+        <div
+            class="phone-screen bg-white w-[350px] h-[700px] rounded-[3rem] border-8 border-gray-800 relative overflow-hidden flex flex-col">
+
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20"></div>
+
+            <div id="screen-content" class="flex-1 overflow-y-auto pt-8 pb-4 px-4 bg-gray-50 h-full relative">
+            </div>
+
+            <div class="h-16 bg-white border-t flex justify-around items-center text-gray-400 z-10">
+                <i class="fa-solid fa-house text-xl"></i>
+                <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                <div
+                    class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs mb-4 shadow-lg">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <i class="fa-regular fa-heart text-xl"></i>
+                <i class="fa-regular fa-user text-xl"></i>
+            </div>
+
+            <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gray-300 rounded-full"></div>
+        </div>
+
+        <footer class="mt-8 text-gray-400 text-xs">
+            Project by Evelyn Bazilio, Gabriel Lucas, Luísa Vieira, Maria Eduarda, Thiago Soares, Thierry Rodrigues and Yuri Augusto • 2° Year IT
+        </footer>
+
+        <div class="mt-6 max-w-2xl px-4 text-center">
+            <h3 class="text-sm font-semibold text-gray-700 mb-2">Image References:</h3>
+            <p class="text-xs text-gray-500">
+                <a href="https://www.behance.net/gallery/62882489/The-Gift-of-the-Magi-Illustration" target="_blank" class="text-indigo-600 hover:underline">Della</a> • <a href="https://www.miranda.com.br/produto/console-playstation-5-ps5-slim-digital-com-2-jogos-returnal-e-ratchetclank-sony-playstation/5581367" target="_blank" class="text-indigo-600 hover:underline">PS5</a> • <a href="https://www.magazineluiza.com.br/smart-tv-55-4k-oled-samsung-qn55s90ca-144hz-wi-fi-bluetooth-com-alexa-4-hdmi-2-usb/p/237449500/et/tv4k/" target="_blank" class="text-indigo-600 hover:underline">TV</a> • <a href="https://www.arainhadoscabelos.com.br/cabelo-ruivo-natural-brasileiro-do-sul" target="_blank" class="text-indigo-600 hover:underline">Hair</a> • <a href="https://www.dysonoficial.com.br/products/modelador-multifuncao-de-cabelo-unica?variant=44369001611443" target="_blank" class="text-indigo-600 hover:underline">Dyson</a>
+            </p>
+        </div>
+
+        <script>
+            const screen = document.getElementById('screen-content');
+            const btnDella = document.getElementById('btn-della');
+            const btnJim = document.getElementById('btn-jim');
+            const btnChat = document.getElementById('btn-chat');
+
+            const storyData = {
+                della: `
+                    <div class="fade-in">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold text-gray-400" id="della-time"></span>
+                            <div class="flex space-x-1">
+                                <i class="fa-solid fa-signal text-xs text-gray-800"></i>
+                                <i class="fa-solid fa-wifi text-xs text-gray-800"></i>
+                                <i class="fa-solid fa-battery-quarter text-xs text-red-500"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-2xl text-white mb-6 shadow-lg">
+                            <p class="text-xs opacity-80">Total Balance</p>
+                            <h2 class="text-3xl font-bold">$1.87</h2>
+                        </div>
+
+                        <h3 class="font-bold text-gray-800 mb-3">Recent Orders</h3>
+                        <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-6 flex items-center">
+                            <img src="assets/Ps5.webp" alt="PlayStation 5" class="w-16 h-16 rounded-lg object-cover mr-3">
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm">PlayStation 5</h4>
+                                <p class="text-xs text-gray-500">Console + Controller</p>
+                                <span class="text-gray-800 font-bold text-sm">Purchased</span>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 text-[10px] px-2 py-1 rounded">On the way</span>
+                        </div>
+
+                        <h3 class="font-bold text-gray-800 mb-3">Sold Items</h3>
+                        <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-6 flex items-center">
+                            <img src="assets/Cabelo.webp" alt="Hair" class="w-16 h-16 rounded-lg object-cover mr-3">
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm">My Hair (Full Length)</h4>
+                                <p class="text-xs text-gray-500">Sold to: Mme. Sofronie</p>
+                                <span class="text-green-600 font-bold text-sm">Sold: $450.00</span>
+                            </div>
+                            <div class="text-green-500 text-xl"><i class="fa-solid fa-check-circle"></i></div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+                            <p class="text-xs text-yellow-800 italic">
+                                "He's been wanting this forever. It will grow back."
+                            </p>
+                        </div>
+                    </div>
+                `,
+                jim: `
+                    <div class="fade-in">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold text-gray-400" id="jim-time"></span>
+                            <div class="flex space-x-1">
+                                <i class="fa-solid fa-signal text-xs text-gray-800"></i>
+                                <i class="fa-solid fa-wifi text-xs text-gray-800"></i>
+                                <i class="fa-solid fa-battery-full text-xs text-gray-800"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800 p-4 rounded-2xl text-white mb-6 shadow-lg">
+                            <div class="flex items-center mb-2">
+                                <i class="fa-brands fa-apple text-xl mr-2"></i>
+                                <span class="text-sm font-semibold">Reminder</span>
+                            </div>
+                            <p class="text-sm">Christmas Eve Dinner: 7:00 PM</p>
+                            <p class="text-xs text-gray-400 mt-1">Don't forget Della's gift.</p>
+                        </div>
+
+                        <h3 class="font-bold text-gray-800 mb-3">Recent Orders</h3>
+                        <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-6 flex items-center">
+                            <img src="assets/Dyson.webp" alt="Dyson Airwrap" class="w-16 h-16 rounded-lg object-cover mr-3">
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm">Dyson Airwrap</h4>
+                                <p class="text-xs text-gray-500">Complete styler</p>
+                                <span class="text-gray-800 font-bold text-sm">Purchased</span>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 text-[10px] px-2 py-1 rounded">On the way</span>
+                        </div>
+
+                        <h3 class="font-bold text-gray-800 mb-3">Sold Items</h3>
+                        <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-6 flex items-center">
+                            <img src="assets/Tv.webp" alt="OLED TV" class="w-16 h-16 rounded-lg object-cover mr-3">
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm">55" OLED TV</h4>
+                                <p class="text-xs text-gray-500">My gaming TV</p>
+                                <span class="text-green-600 font-bold text-sm">Sold to: Facebook Marketplace</span>
+                            </div>
+                            <div class="text-green-500 text-xl"><i class="fa-solid fa-check-circle"></i></div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                            <p class="text-xs text-blue-800 italic">
+                                "She's been talking about this for months. Worth it."
+                            </p>
+                        </div>
+                    </div>
+                `,
+                chat: `
+                    <div class="fade-in flex flex-col h-full">
+                        <div class="flex items-center border-b pb-4 mb-4">
+                            <img src="assets/Della.jpg" alt="Della" class="w-10 h-10 rounded-full object-cover mr-3">
+                            <div>
+                                <h3 class="font-bold text-sm">My Della ❤️</h3>
+                                <p class="text-xs text-green-500">Online</p>
+                            </div>
+                            <i class="fa-solid fa-video ml-auto text-blue-500 text-xl"></i>
+                        </div>
+
+                        <div class="flex-1 overflow-y-auto flex flex-col px-2">
+                            <div class="text-center text-xs text-gray-400 mb-4">Today</div>
+
+                            <div class="chat-bubble chat-sent">
+                                Dell? I'm home. Why are you wearing that hat?
+                            </div>
+
+                            <div class="chat-bubble chat-received">
+                                Jim... don't be mad. 🥺 I sold my hair.
+                            </div>
+                            <div class="chat-bubble chat-received">
+                                I couldn't let Christmas go by without getting you what you wanted! It will grow back!
+                            </div>
+
+                            <div class="chat-bubble chat-sent">
+                                You... sold your hair?
+                            </div>
+                            <div class="chat-bubble chat-sent">
+                                Open your gift, Dell. You'll see why I'm freaking out. 🎁
+                            </div>
+
+                            <div class="text-center text-xs text-gray-400 my-2">Della opened the package</div>
+                            
+                            <div class="chat-bubble chat-received">
+                                A DYSON?! 😱 The Airwrap?! Jim!!!
+                            </div>
+                            <div class="chat-bubble chat-received">
+                                This is amazing... but my hair is gone!
+                            </div>
+                            
+                            <div class="chat-bubble chat-received">
+                                Wait... open yours now. I got the last one in stock! 🎁
+                            </div>
+
+                            <div class="text-center text-xs text-gray-400 my-2">Jim opened the package</div>
+
+                            <div class="chat-bubble chat-sent">
+                                A PS5?! Dell this is insane!
+                            </div>
+                            <div class="chat-bubble chat-sent">
+                                But babe... I sold the TV to buy your Dyson.
+                            </div>
+                            <div class="chat-bubble chat-sent">
+                                I have a PS5 but nothing to play it on 😂😭
+                            </div>
+
+                            <div class="mt-6 text-center">
+                                <p class="text-xs text-white italic bg-indigo-600 p-3 rounded-lg shadow-lg">
+                                    "Of all who give and receive gifts, such as they are wisest."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-auto pt-4 border-t flex items-center text-gray-400">
+                            <i class="fa-solid fa-plus mr-3"></i>
+                            <div class="flex-1 bg-gray-100 rounded-full h-8 px-4 text-xs flex items-center">Message...</div>
+                            <i class="fa-solid fa-paper-plane ml-3 text-blue-500"></i>
+                        </div>
+                    </div>
+                `
+            };
+
+            function setPerspective(user) {
+                btnDella.className = "px-6 py-2 rounded-full font-bold transition-colors text-gray-500 hover:bg-gray-100";
+                btnJim.className = "px-6 py-2 rounded-full font-bold transition-colors text-gray-500 hover:bg-gray-100";
+                btnChat.className = "px-6 py-2 rounded-full font-bold transition-colors text-gray-500 hover:bg-gray-100";
+
+                if (user === 'della') {
+                    btnDella.className = "px-6 py-2 rounded-full font-bold transition-colors bg-pink-500 text-white shadow-lg";
+                } else if (user === 'jim') {
+                    btnJim.className = "px-6 py-2 rounded-full font-bold transition-colors bg-blue-600 text-white shadow-lg";
+                } else {
+                    btnChat.className = "px-6 py-2 rounded-full font-bold transition-colors bg-indigo-600 text-white shadow-lg";
+                }
+
+                screen.innerHTML = storyData[user];
+                
+                if (user === 'della' || user === 'jim') {
+                    updateTime(user);
+                }
+            }
+
+            function updateTime(user) {
+                const now = new Date();
+                let hours = now.getHours();
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12 || 12;
+                const timeString = `${hours}:${minutes} ${ampm}`;
+                
+                const timeElement = document.getElementById(`${user}-time`);
+                if (timeElement) {
+                    timeElement.textContent = timeString;
+                }
+            }
+
+            setPerspective('della');
+
+        </script>
+    </body>
+</html>
